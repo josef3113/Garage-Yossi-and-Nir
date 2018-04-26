@@ -19,6 +19,8 @@ namespace ConsoleUI
         {
             Console.WriteLine("new Hey");
             // book nir try
+
+            Console.WriteLine("Shaaa it's a secret :)");
             Console.ReadLine();
         }
 
