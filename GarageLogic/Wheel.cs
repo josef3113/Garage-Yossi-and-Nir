@@ -53,7 +53,14 @@ namespace GarageLogic
 
         public void AirInflation(float i_AmountOfAirToAdd)
         {
-            // book todo by exption
+            if( (m_CurrentAirPressure + i_AmountOfAirToAdd) < m_MaxAirPressure)
+            {
+                m_CurrentAirPressure += i_AmountOfAirToAdd;
+            }
+            else
+            {
+                throw new ValueOutOfRangeException(null, m_MaxAirPressure, 0);
+            }
         }
     }
 }

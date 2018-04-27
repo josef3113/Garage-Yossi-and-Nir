@@ -31,7 +31,18 @@ namespace ConsoleUI  // add referns to logick for check
             List<GarageLogic.Wheel> test = stam.ListOfWheels;
 
             Console.WriteLine(test.Count);
+            GarageLogic.Wheel check = new GarageLogic.Wheel();
+            check.MaxAirPressure = 20;
+            try
+            {
+                check.AirInflation(30);
+            }
+            catch(GarageLogic.ValueOutOfRangeException vore )
+            {
+                Console.WriteLine(vore.Message);
 
+            }
+            
             Console.ReadLine();
             
         }
