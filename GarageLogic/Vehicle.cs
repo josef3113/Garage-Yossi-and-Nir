@@ -10,7 +10,8 @@ namespace GarageLogic
     {
         private string m_Model;
         private string m_LicenseNumber;
-        private float m_PersentOfEnergy;        
+        private float m_PersentOfEnergy;
+        List<Wheel> m_ListOfWheels;
 
         public string Model
         {
@@ -45,5 +46,16 @@ namespace GarageLogic
         }
 
         // book yossi here put the - tire .
+        public List<Wheel> ListOfWheels
+        {
+            get
+            {
+                return m_ListOfWheels;
+            }
+            set // book think about this mybe not need or need to be privat
+            {
+                m_ListOfWheels = value;
+            }
+        }
     }
 }

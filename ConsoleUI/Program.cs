@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleUI
+namespace ConsoleUI  // add referns to logick for check 
 {
     class Program
     {
@@ -21,6 +21,13 @@ namespace ConsoleUI
                        
             
             Console.ReadLine();
+        }
+
+        public static void TestingYosi()
+        {
+            GarageLogic.Wheel stam = new GarageLogic.Wheel();
+            
+            
         }
 
     }
