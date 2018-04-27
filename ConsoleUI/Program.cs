@@ -36,7 +36,7 @@ namespace ConsoleUI  // add referns to logick for check
             check.CurrentAirPressure = 3;
             try
             {
-                check.AirInflation(21);
+                check.AirInflation(21); 
             }
             catch(GarageLogic.ValueOutOfRangeException vore )
             {
