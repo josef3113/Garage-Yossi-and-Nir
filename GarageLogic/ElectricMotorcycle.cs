@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    public class ElectricMotorcycle :ElectricVehicles
+    public class ElectricMotorcycle : ElectricVehicles
     {
-        MotorcycleDetails m_DetailsOfMotorcycle;
+        private MotorcycleDetails m_DetailsOfMotorcycle;
+
         public ElectricMotorcycle(int i_NumOfWheels)
         {
             this.ListOfWheels = new List<Wheel>(2);

@@ -53,13 +53,13 @@ namespace GarageLogic
 
         public void AirInflation(float i_AmountOfAirToAdd)
         {
-            if( (m_CurrentAirPressure + i_AmountOfAirToAdd) <= m_MaxAirPressure)
+            if((m_CurrentAirPressure + i_AmountOfAirToAdd) <= m_MaxAirPressure )
             {
                 m_CurrentAirPressure += i_AmountOfAirToAdd;
             }
             else
             {                                       // it is max that you can insert in your "tank"
-                throw new ValueOutOfRangeException(null, ( m_MaxAirPressure - m_CurrentAirPressure), 0);
+                throw new ValueOutOfRangeException(null,  m_MaxAirPressure - m_CurrentAirPressure, 0);
             }
         }
     }
