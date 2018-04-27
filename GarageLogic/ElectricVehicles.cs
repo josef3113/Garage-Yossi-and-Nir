@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    public class ElectricVehicles :Vehicle
+    public abstract class ElectricVehicles :Vehicle
     {
         private float m_BatteryHours;
         private float m_MaxHoursBattery;
 
+        
         public float BatteryHours
         {
             get
@@ -37,10 +38,19 @@ namespace GarageLogic
             }
         }
 
-        public void ChargingBattery()
+        public void ChargingBattery(float i_AmoutOfEnergyToAdd)
         {
-            // book to do with exption
+            if( (m_BatteryHours + i_AmoutOfEnergyToAdd) <= m_MaxHoursBattery  )
+            {
+                m_BatteryHours += i_AmoutOfEnergyToAdd;
+            }
+            else
+            {
+                // book need to br exption
+            }
+
         }
+        
 
         // book i dont know what is this 
         public override float PersentOfEnergy => throw new NotImplementedException();

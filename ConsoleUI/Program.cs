@@ -11,7 +11,9 @@ namespace ConsoleUI  // add referns to logick for check
         public static void Main()
         {
 
-            Testing();
+            //Testing();
+            TestingYosi();
+
 
         }
         
@@ -25,8 +27,12 @@ namespace ConsoleUI  // add referns to logick for check
 
         public static void TestingYosi()
         {
-            GarageLogic.Wheel stam = new GarageLogic.Wheel();
-            
+            GarageLogic.ElectricMotorcycle stam = new GarageLogic.ElectricMotorcycle(2);
+            List<GarageLogic.Wheel> test = stam.ListOfWheels;
+
+            Console.WriteLine(test.Count);
+
+            Console.ReadLine();
             
         }
 
