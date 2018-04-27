@@ -33,9 +33,10 @@ namespace ConsoleUI  // add referns to logick for check
             Console.WriteLine(test.Count);
             GarageLogic.Wheel check = new GarageLogic.Wheel();
             check.MaxAirPressure = 20;
+            check.CurrentAirPressure = 3;
             try
             {
-                check.AirInflation(30);
+                check.AirInflation(21);
             }
             catch(GarageLogic.ValueOutOfRangeException vore )
             {
