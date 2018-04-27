@@ -8,9 +8,9 @@ namespace GarageLogic
 {
     public class Wheel
     {
-        string m_ManufacturerName;
-        float m_CurrentAirPressure;
-        float m_MaxAirPressure;
+        private string m_ManufacturerName;
+        private float m_CurrentAirPressure;
+        private float m_MaxAirPressure;
 
         public string ManufacturerName
         {
@@ -18,6 +18,7 @@ namespace GarageLogic
             {
                 return m_ManufacturerName;
             }
+
             set
             {
                 m_ManufacturerName = value;
@@ -30,6 +31,7 @@ namespace GarageLogic
             {
                 return m_CurrentAirPressure;
             }
+
             set
             {
                 m_CurrentAirPressure = value;
@@ -42,6 +44,7 @@ namespace GarageLogic
             {
                 return m_MaxAirPressure;
             }
+
             set
             {
                 m_MaxAirPressure = value;
@@ -52,6 +55,5 @@ namespace GarageLogic
         {
             // book todo by exption
         }
-
     }
 }
