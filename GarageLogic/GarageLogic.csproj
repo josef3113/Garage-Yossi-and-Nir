@@ -41,6 +41,7 @@
     <Compile Include="ElectricMotorcycle.cs" />
     <Compile Include="ElectricVehicles.cs" />
     <Compile Include="MotorcycleDetails.cs" />
+    <Compile Include="ValueOutOfRangeException.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Wheel.cs" />
   </ItemGroup>
