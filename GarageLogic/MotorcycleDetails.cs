@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    internal class MotorcycleDetails
+    public class MotorcycleDetails
     {
         private int m_EngineCapacity;
         private eTypeOfLicense m_TypeOfLicense = eTypeOfLicense.A; // difult is A
+
+        public MotorcycleDetails(eTypeOfLicense i_TypeOfLicense, int i_EngineCapacity)
+        {
+            this.TypeOfLicense = i_TypeOfLicense;
+            this.EngineCapacity = i_EngineCapacity;
+        }
 
         public int EngineCapacity
         {
