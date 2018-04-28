@@ -27,22 +27,13 @@ namespace ConsoleUI  // add referns to logick for check
 
         public static void TestingYosi()
         {
-            GarageLogic.ElectricMotorcycle stam = new GarageLogic.ElectricMotorcycle(2);
-            List<GarageLogic.Wheel> test = stam.ListOfWheels;
-
-            Console.WriteLine(test.Count);
-            GarageLogic.Wheel check = new GarageLogic.Wheel();
-            check.MaxAirPressure = 20;
-            check.CurrentAirPressure = 3;
-            try
-            {
-                check.AirInflation(21); 
-            }
-            catch(GarageLogic.ValueOutOfRangeException vore )
-            {
-                Console.WriteLine(vore.Message);
-
-            }
+           
+            
+            GarageLogic.Wheel check = new GarageLogic.Wheel("YosiWheel",0,30);
+            check.CurrentAirPressure = 23;
+            Console.WriteLine(check); ;
+            
+            
             
             Console.ReadLine();
             

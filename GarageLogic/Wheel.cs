@@ -12,6 +12,13 @@ namespace GarageLogic
         private float m_CurrentAirPressure;
         private float m_MaxAirPressure;
 
+        public Wheel(string i_ManufacturerName, float i_CurrentAirPressure, float i_MaxAirPressure)
+        {
+            this.ManufacturerName = i_ManufacturerName;
+            this.CurrentAirPressure = i_CurrentAirPressure;
+            this.MaxAirPressure = i_MaxAirPressure;
+        }
+
         public string ManufacturerName
         {
             get
@@ -31,7 +38,7 @@ namespace GarageLogic
             {
                 return m_CurrentAirPressure;
             }
-
+            // book need to check if is more than max Air Pressure..........
             set
             {
                 m_CurrentAirPressure = value;
@@ -45,7 +52,7 @@ namespace GarageLogic
                 return m_MaxAirPressure;
             }
 
-            set
+            private set
             {
                 m_MaxAirPressure = value;
             }
@@ -61,6 +68,15 @@ namespace GarageLogic
             {                                       // it is max that you can insert in your "tank"
                 throw new ValueOutOfRangeException(null,  m_MaxAirPressure - m_CurrentAirPressure, 0);
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format(
+@"Deatels of Whell :
+The  ManufacturerName  is :{0}
+The MaxAirPressure     is :{1}
+The CurrentAirPressure is :{2}", ManufacturerName, MaxAirPressure, CurrentAirPressure);
         }
     }
 }
