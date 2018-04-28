@@ -41,7 +41,7 @@ namespace GarageLogic
             Exception i_innerException,
             float i_MaxValue,
             float i_MinValue)
-            :base(
+            : base(
                  string.Format("The value was outside from rang try value {0} to {1}",i_MinValue,i_MaxValue),
                  i_innerException)
         {

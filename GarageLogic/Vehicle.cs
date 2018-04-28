@@ -8,21 +8,22 @@ namespace GarageLogic
 {
     public abstract class Vehicle
     {
-        private string m_Model;
-        private string m_LicenseNumber;
-        private float m_PersentOfEnergy;
+        protected readonly string m_Model;
+        protected readonly string m_LicenseNumber;
+        protected float m_PersentOfEnergy = 100;
         List<Wheel> m_ListOfWheels;
+
+        public Vehicle(string i_Model ,string i_LicenseNumber)
+        {
+            m_Model = i_Model;
+            m_LicenseNumber = i_LicenseNumber;
+        }       
 
         public string Model
         {
             get
             {
                 return m_Model;
-            }
-
-            set
-            {
-                m_Model = value;
             }
         }
 
@@ -32,17 +33,13 @@ namespace GarageLogic
             {
                 return m_LicenseNumber;
             }
-
-            set
-            {
-                m_LicenseNumber = value;
-            }
         }
         
         abstract public float PersentOfEnergy
         {
         // book to do when we can , precent of energy.
-            get;          
+            get;
+            set;
         }
 
         // book yossi here put the - tire .
@@ -52,6 +49,7 @@ namespace GarageLogic
             {
                 return m_ListOfWheels;
             }
+
             set // book think about this mybe not need or need to be privat
             {
                 m_ListOfWheels = value;

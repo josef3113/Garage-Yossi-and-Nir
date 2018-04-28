@@ -19,8 +19,7 @@ namespace ConsoleUI  // add referns to logick for check
         
         public static void Testing()
         {
-            Console.WriteLine("new Hey");
-                       
+            Console.WriteLine("new Hey");                       
             
             Console.ReadLine();
         }
