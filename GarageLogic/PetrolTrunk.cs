@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    class PetrolTrunk : PetrolVehicle
+    public class PetrolTrunk : PetrolVehicle
     {
         TruckDetails m_TruckDetails;
 

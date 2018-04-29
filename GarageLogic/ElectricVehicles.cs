@@ -11,8 +11,8 @@ namespace GarageLogic
         private float m_BatteryHoursLeft;
         private float m_MaxHoursBattery;
 
-        protected ElectricVehicles(string i_Model, string i_LicenseNumber)
-            : base(i_Model, i_LicenseNumber)
+        protected ElectricVehicles(string i_Model, string i_LicenseNumber, byte i_NumOfWheels)
+            : base(i_Model, i_LicenseNumber, i_NumOfWheels)
         {
         }
 

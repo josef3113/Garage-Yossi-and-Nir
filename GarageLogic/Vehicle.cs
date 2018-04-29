@@ -13,10 +13,11 @@ namespace GarageLogic
         protected float m_PercentOfEnergy = 100;
         protected List<Wheel> m_ListOfWheels;
 
-        public Vehicle(string i_Model, string i_LicenseNumber)
+        public Vehicle(string i_Model, string i_LicenseNumber, byte i_NumOfWheels)
         {
             r_Model = i_Model;
             r_LicenseNumber = i_LicenseNumber;
+            m_ListOfWheels = new List<Wheel>(i_NumOfWheels);
         }
 
         protected void initWheelsList(string i_ManufacturerName , float i_CurrentAirPressure, float i_MaxAirPressure, byte i_NumOfWheels)
