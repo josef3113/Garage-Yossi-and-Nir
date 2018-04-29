@@ -8,13 +8,13 @@ namespace GarageLogic
 {
     internal class CarDetails
     {
-        private readonly byte m_DoorsCount;
+        private byte m_DoorsCount;
         private eCarColor m_CarColor;
 
         public CarDetails(byte i_DoorCount, string i_CarColor)
         {
-            m_DoorsCount = i_DoorCount;
-            m_CarColor = (eCarColor)Enum.Parse(typeof(eCarColor), i_CarColor); // book to check if it work and if it need to be here;
+            DoorsCount = i_DoorCount;
+            CarColor = i_CarColor;
         }
 
         public byte DoorsCount
@@ -23,21 +23,39 @@ namespace GarageLogic
             {
                 return m_DoorsCount;
             }
+
+            protected set
+            {
+                if (value >= 2 && value <= 5)
+                {
+                    m_DoorsCount = value;
+                }
+                else
+                {
+                    throw new ValueOutOfRangeException(null, 5, 2);
+                }
+            }
         }
 
-        public eCarColor CarColor // book to check how to do it right
+        public string CarColor
         {
             get
             {
-                return m_CarColor;
+                return m_CarColor.ToString();
             }
 
             set
             {
-                m_CarColor = value;
+                if (Enum.TryParse<eCarColor>(value, out eCarColor someColor))
+                {
+                    m_CarColor = someColor;
+                }
+                else
+                {
+                    throw new FormatException();
+                }
             }
         }
-
 
         public enum eCarColor : byte
         {

@@ -10,16 +10,41 @@ namespace GarageLogic
     {
         protected readonly float m_MaxFuelTank;  
         protected float m_CurrentFuelTank;
-        protected readonly eFuelType r_FuleType;
+        protected readonly eFuelType r_FuelType;
 
-        public PetrolVehicle(string i_Model, string i_LicenseNumber, eFuelType i_FuelType,float i_MaxFuelTank) 
-            : base(i_Model, i_LicenseNumber)
+        public PetrolVehicle(string i_Model, string i_LicenseNumber, eFuelType i_FuelType,float i_MaxFuelTank,byte i_NumOfWheels) 
+            : base(i_Model, i_LicenseNumber, i_NumOfWheels)
         {
-            r_FuleType = i_FuelType;
+            r_FuelType = i_FuelType;
             m_MaxFuelTank = i_MaxFuelTank;
         }
-
-        abstract public void Refuel(string i_FuelType, float i_FuelAmout);
+                
+        public void Refuel(string i_FuelType, float i_FuelAmout)
+        {
+            if (Enum.TryParse<eFuelType>(i_FuelType, out eFuelType currentFuel))
+            {
+                if (currentFuel == r_FuelType)
+                {
+                    if (m_CurrentFuelTank + i_FuelAmout <= m_MaxFuelTank)
+                    {
+                        m_CurrentFuelTank += i_FuelAmout;
+                        m_PercentOfEnergy = m_CurrentFuelTank / m_MaxFuelTank;
+                    }
+                    else
+                    {
+                        throw new ValueOutOfRangeException(null, m_MaxFuelTank - m_CurrentFuelTank, 0);
+                    }
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+            else
+            {
+                throw new FormatException();
+            }
+        }
 
         public float MaxFuelTank
         {

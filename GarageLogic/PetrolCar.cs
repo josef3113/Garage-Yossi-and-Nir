@@ -8,33 +8,38 @@ namespace GarageLogic
 {
     public class PetrolCar : PetrolVehicle
     {
-        CarDetails CarDetails;
-        const eFuelType k_FuelType = eFuelType.Octan98; // not
+        const byte k_NumOfWheels = 4;
+        const float k_MaxAirPressure = 32, k_CurrentFuelTank = 45f;
+        private CarDetails m_CarDetails;
 
-        public PetrolCar(string i_ModelName, string i_LicenseNumber)
-            : base(i_ModelName, i_LicenseNumber)
+        public PetrolCar(string i_ModelName, string i_LicenseNumber, string i_CarColor)
+            : base(i_ModelName, i_LicenseNumber, eFuelType.Octan98, k_CurrentFuelTank, k_NumOfWheels)
         {
-            // book fill the constractor with all fields that needed.
-            m_MaxFuelTank = 45f;
+            // book fill the constractor with all fields that needed.            
             m_CurrentFuelTank = 0;
             m_PercentOfEnergy = 0;
-            CarDetails = new CarDetails(4, "White");
-            m_ListOfWheels = new List<Wheel>(4);
-
-            foreach(Wheel wheel in m_ListOfWheels)
-            {
-                m_ListOfWheels.Add(new Wheel("Unknown", 0, 32));
-            }
-            
-            m_ListOfWheels.Add(new Wheel("Unknown", 0, 32));
-            m_ListOfWheels.Add(new Wheel("Unknown", 0, 32));
-            m_ListOfWheels.Add(new Wheel("Unknown", 0, 32));
-            m_ListOfWheels.Add(new Wheel("Unknown", 0, 32));
+            m_CarDetails = new CarDetails(4, i_CarColor);
+            initWheelsList("Unknown", 0, k_MaxAirPressure, k_NumOfWheels);
         }
 
-        public override void Refuel(string i_FuelType, float i_FuelAmout)
+        public string CarColor
         {
-            throw new NotImplementedException();
+            get
+            {
+                return m_CarDetails.CarColor;
+            }
+            set
+            {
+                m_CarDetails.CarColor = value;
+            }
+        }
+
+        public byte DoorsCount
+        {
+            get
+            {
+                return m_CarDetails.DoorsCount;
+            }
         }
     }
 }
