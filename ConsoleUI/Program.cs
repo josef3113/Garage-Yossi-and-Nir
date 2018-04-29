@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GarageLogic;
 
 namespace ConsoleUI  // add referns to logick for check 
 {
@@ -19,7 +20,17 @@ namespace ConsoleUI  // add referns to logick for check
         
         public static void Testing()
         {
-            Console.WriteLine("new Hey");                       
+            Console.WriteLine("new Hey");
+
+            Vehicle[] vehicles = new Vehicle[5];
+
+            vehicles[0] = new PetrolCar("Jetta", "34567", "Gray", 4);
+            vehicles[1] = new PetrolCar("Ferrari", "87654", "Blue", 2);
+            vehicles[2] = new ElectricCar("Tesla", "32451", "White", 4);
+            vehicles[3] = new PetrolTrunk("Volvo", "12563", 15_000f,true);
+            vehicles[4] = new ElectricCar("Renu", "08912", "Gray",3);
+
+            PetrolVehicle car = new PetrolCar("Jetta","34567","Gray",4);
             
             Console.ReadLine();
         }

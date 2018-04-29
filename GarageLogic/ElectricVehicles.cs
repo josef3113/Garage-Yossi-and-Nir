@@ -8,12 +8,13 @@ namespace GarageLogic
 {
     public abstract class ElectricVehicles : Vehicle
     {
-        private float m_BatteryHoursLeft;
-        private float m_MaxHoursBattery;
+        protected float m_BatteryHoursLeft;
+        protected readonly float m_MaxHoursBattery;
 
-        protected ElectricVehicles(string i_Model, string i_LicenseNumber, byte i_NumOfWheels)
+        protected ElectricVehicles(string i_Model, string i_LicenseNumber, byte i_NumOfWheels, float i_MaxHoursBattery)
             : base(i_Model, i_LicenseNumber, i_NumOfWheels)
         {
+            m_MaxHoursBattery = i_MaxHoursBattery;
         }
 
         public float BatteryHoursLeft

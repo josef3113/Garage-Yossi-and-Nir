@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    public class PetrolCar : PetrolVehicle
+    public class ElectricCar : ElectricVehicles
     {
-        const float k_MaxAirPressure = 32, k_CurrentFuelTank = 45f;
+        const float k_MaxHoursBattery = 3.2f, k_MaxAirPressure = 32;
         const byte k_NumOfWheels = 4;
         private CarDetails m_CarDetails;
 
-        public PetrolCar(string i_ModelName, string i_LicenseNumber, string i_CarColor, byte i_NumOfDoors)
-            : base(i_ModelName, i_LicenseNumber, eFuelType.Octan98, k_CurrentFuelTank, k_NumOfWheels)
-        {                       
-            m_CurrentFuelTank = 0;
+        public ElectricCar(string i_Model, string i_LicenseNumber, string i_CarColor, byte i_NumOfDoors)
+            : base(i_Model, i_LicenseNumber, k_NumOfWheels, k_MaxHoursBattery)
+        {
+            m_BatteryHoursLeft = 0;
             m_PercentOfEnergy = 0;
             m_CarDetails = new CarDetails(i_NumOfDoors, i_CarColor);
             initWheelsList("Unknown", 0, k_MaxAirPressure, k_NumOfWheels);
