@@ -8,7 +8,6 @@ namespace GarageLogic
 {
     internal class CarDetails
     {
-
         private readonly byte m_DoorsCount;
         private eCarColor m_CarColor;
 
