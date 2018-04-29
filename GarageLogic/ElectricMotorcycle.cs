@@ -32,11 +32,5 @@ namespace GarageLogic
             this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
             this.MaxHoursBattery = (float)1.8;
         }
-        // book do not anthing
-        public override float PersentOfEnergy
-        {
-            get;
-            set;
-        }
     }
 }
