@@ -9,7 +9,7 @@ namespace GarageLogic
     public class PetrolCar : PetrolVehicle
     {
         CarDetails CarDetails;
-        const eFuelType k_FuelType = eFuelType.Octan98;
+        const eFuelType k_FuelType = eFuelType.Octan98; // not
 
         public PetrolCar(string i_ModelName, string i_LicenseNumber)
             : base(i_ModelName, i_LicenseNumber)
