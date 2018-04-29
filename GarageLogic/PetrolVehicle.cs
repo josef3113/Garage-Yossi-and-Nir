@@ -8,7 +8,7 @@ namespace GarageLogic
 {
     abstract public class PetrolVehicle : Vehicle
     {
-        protected readonly float m_MaxFuelTank;
+        protected readonly float m_MaxFuelTank; 
         protected float m_CurrentFuelTank;
         protected readonly eFuelType r_FuleType;
 
