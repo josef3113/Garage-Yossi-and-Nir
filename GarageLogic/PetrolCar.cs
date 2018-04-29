@@ -16,14 +16,7 @@ namespace GarageLogic
             // book fill the constractor with all fields that needed.
             CarDetails = new CarDetails(4,"White");
         }
-
-        public override float PersentOfEnergy => throw new NotImplementedException();
-
-        public override void SetPersentOfEnergy(float value)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public override void Refuel(string i_FuelType, float i_FuelAmout)
         {
             throw new NotImplementedException();

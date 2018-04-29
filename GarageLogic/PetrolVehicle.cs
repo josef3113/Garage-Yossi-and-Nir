@@ -32,9 +32,7 @@ namespace GarageLogic
             }
         }
 
-
-
-        protected enum eFuelType : byte
+        public enum eFuelType : byte
         {
             Soler ,
             Octan95 ,
