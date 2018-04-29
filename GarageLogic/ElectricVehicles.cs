@@ -47,10 +47,11 @@ namespace GarageLogic
             if((m_BatteryHoursLeft + i_AmoutOfEnergyToAdd) <= m_MaxHoursBattery)
             {
                 m_BatteryHoursLeft += i_AmoutOfEnergyToAdd;
+                m_PercentOfEnergy = m_BatteryHoursLeft / m_MaxHoursBattery;
             }
             else
             {
-                // book need to br exption
+                throw new ValueOutOfRangeException(null, m_MaxHoursBattery - m_BatteryHoursLeft, 0);
             }
         }
     }

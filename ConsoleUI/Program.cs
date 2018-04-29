@@ -35,7 +35,7 @@ namespace ConsoleUI  // add referns to logick for check
 
             GarageLogic.ElectricMotorcycle motorcycle = new GarageLogic.ElectricMotorcycle("kavasaky", "34-45", GarageLogic.eTypeOfLicense.B1, 560);
 
-            motorcycle.ChargingBattery(3);
+           
             
             Console.ReadLine();
             

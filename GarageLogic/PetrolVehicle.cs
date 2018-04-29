@@ -8,10 +8,15 @@ namespace GarageLogic
 {
     abstract public class PetrolVehicle : Vehicle
     {
-        protected float m_MaxFuelTank, m_CurrentFuelTank;
-        
-        public PetrolVehicle(string i_Model, string i_LicenseNumber) : base(i_Model, i_LicenseNumber)
+        protected readonly float m_MaxFuelTank;
+        protected float m_CurrentFuelTank;
+        protected readonly eFuelType r_FuleType;
+
+        public PetrolVehicle(string i_Model, string i_LicenseNumber, eFuelType i_FuelType,float i_MaxFuelTank) 
+            : base(i_Model, i_LicenseNumber)
         {
+            r_FuleType = i_FuelType;
+            m_MaxFuelTank = i_MaxFuelTank;
         }
 
         abstract public void Refuel(string i_FuelType, float i_FuelAmout);
