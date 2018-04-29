@@ -8,8 +8,8 @@ namespace GarageLogic
 {
     public abstract class Vehicle
     {
-        protected readonly string m_Model;
-        protected readonly string m_LicenseNumber;
+        protected readonly string m_Model;      // r_Model
+        protected readonly string m_LicenseNumber; // r_LicenseNumber
         protected float m_PersentOfEnergy = 100;
         List<Wheel> m_ListOfWheels;
 

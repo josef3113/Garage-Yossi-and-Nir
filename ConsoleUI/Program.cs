@@ -29,10 +29,13 @@ namespace ConsoleUI  // add referns to logick for check
            
             
             GarageLogic.Wheel check = new GarageLogic.Wheel("YosiWheel",0,30);
-            check.CurrentAirPressure = 23;
-            Console.WriteLine(check); ;
-            
-            
+            Console.WriteLine(check);
+            check.AirInflation(23);
+            Console.WriteLine(check);
+
+            GarageLogic.ElectricMotorcycle motorcycle = new GarageLogic.ElectricMotorcycle("kavasaky", "34-45", GarageLogic.eTypeOfLicense.B1, 560);
+
+            motorcycle.ChargingBattery(3);
             
             Console.ReadLine();
             

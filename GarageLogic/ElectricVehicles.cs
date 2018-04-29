@@ -8,7 +8,7 @@ namespace GarageLogic
 {
     public abstract class ElectricVehicles : Vehicle
     {
-        private float m_BatteryHours;
+        private float m_BatteryHoursLeft;
         private float m_MaxHoursBattery;
 
         protected ElectricVehicles(string i_Model, string i_LicenseNumber)
@@ -16,16 +16,16 @@ namespace GarageLogic
         {
         }
 
-        public float BatteryHours
+        public float BatteryHoursLeft
         {
             get
             {
-                return m_BatteryHours;
+                return m_BatteryHoursLeft;
             }
 
             set
             {
-                m_BatteryHours = value;
+                m_BatteryHoursLeft = value;
             }
         }
 
@@ -44,9 +44,9 @@ namespace GarageLogic
 
         public void ChargingBattery(float i_AmoutOfEnergyToAdd)
         {
-            if((m_BatteryHours + i_AmoutOfEnergyToAdd) <= m_MaxHoursBattery)
+            if((m_BatteryHoursLeft + i_AmoutOfEnergyToAdd) <= m_MaxHoursBattery)
             {
-                m_BatteryHours += i_AmoutOfEnergyToAdd;
+                m_BatteryHoursLeft += i_AmoutOfEnergyToAdd;
             }
             else
             {

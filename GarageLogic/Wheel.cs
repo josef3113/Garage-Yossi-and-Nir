@@ -76,7 +76,8 @@ namespace GarageLogic
 @"Deatels of Whell :
 The  ManufacturerName  is :{0}
 The MaxAirPressure     is :{1}
-The CurrentAirPressure is :{2}", ManufacturerName, MaxAirPressure, CurrentAirPressure);
+The CurrentAirPressure is :{2}"
+, ManufacturerName, MaxAirPressure, CurrentAirPressure);
         }
     }
 }
