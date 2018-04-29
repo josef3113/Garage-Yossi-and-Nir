@@ -19,6 +19,14 @@ namespace GarageLogic
             r_LicenseNumber = i_LicenseNumber;
         }
 
+        protected void initWheelsList(string i_ManufacturerName , float i_CurrentAirPressure, float i_MaxAirPressure, byte i_NumOfWheels)
+        {
+            for (int i = 0; i < i_NumOfWheels; i++)
+            {
+                m_ListOfWheels.Add(new Wheel(i_ManufacturerName,i_CurrentAirPressure,i_MaxAirPressure));
+            }
+        }
+
         public float PercentOfEnergy
         {
             get
