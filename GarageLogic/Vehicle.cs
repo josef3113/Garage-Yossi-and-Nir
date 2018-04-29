@@ -19,9 +19,12 @@ namespace GarageLogic
             r_LicenseNumber = i_LicenseNumber;
         }
 
-        abstract public float PercentOfEnergy
+        public float PercentOfEnergy
         {
-            get;
+            get
+            {
+                return m_PercentOfEnergy;
+            }
         }
 
         public string Model

@@ -32,5 +32,8 @@ namespace GarageLogic
             this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
             this.MaxHoursBattery = (float)1.8;
         }
+
+      
+
     }
 }
