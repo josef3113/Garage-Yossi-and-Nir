@@ -11,7 +11,7 @@ namespace GarageLogic
         protected readonly string m_Model;      // r_Model
         protected readonly string m_LicenseNumber; // r_LicenseNumber
         protected float m_PersentOfEnergy = 100;
-        List<Wheel> m_ListOfWheels;
+        protected List<Wheel> m_ListOfWheels;
 
         public Vehicle(string i_Model ,string i_LicenseNumber)
         {
