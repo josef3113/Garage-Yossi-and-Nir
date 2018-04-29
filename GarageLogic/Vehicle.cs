@@ -42,7 +42,7 @@ namespace GarageLogic
             set;
         }
 
-        // book yossi here put the - tire .
+       
         public List<Wheel> ListOfWheels
         {
             get
