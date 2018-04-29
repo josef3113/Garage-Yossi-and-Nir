@@ -42,7 +42,7 @@ namespace GarageLogic
                 m_TypeOfLicense = value;
             }
         }
-    }
+    } // nasted
     // book i not sure about all use in enum check this 
     public enum eTypeOfLicense : byte
     {

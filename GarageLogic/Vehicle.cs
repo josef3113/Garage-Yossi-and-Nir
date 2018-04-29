@@ -34,13 +34,10 @@ namespace GarageLogic
                 return m_LicenseNumber;
             }
         }
-        
-        abstract public float PersentOfEnergy
-        {
-        // book to do when we can , precent of energy.
-            get;
-            set;
-        }
+
+        public abstract float PersentOfEnergy { get; }
+
+        public abstract void SetPersentOfEnergy(float value);
 
         // book yossi here put the - tire .
         public List<Wheel> ListOfWheels

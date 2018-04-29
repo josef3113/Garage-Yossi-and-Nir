@@ -53,7 +53,5 @@ namespace GarageLogic
                 // book need to br exption
             }
         }
-        // book i dont know what is this 
-        public override float PersentOfEnergy => throw new NotImplementedException();
     }
 }

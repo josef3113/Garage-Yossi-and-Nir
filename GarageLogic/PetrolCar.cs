@@ -14,10 +14,11 @@ namespace GarageLogic
             // book fill the constractor with all fields that needed.
         }
 
-        public override float PersentOfEnergy // book n take care of this.
+        public override float PersentOfEnergy => throw new NotImplementedException();
+
+        public override void SetPersentOfEnergy(float value)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override void Refuel(string i_FuelType, float i_FuelAmout)
