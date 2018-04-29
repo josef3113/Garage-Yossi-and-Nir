@@ -35,11 +35,9 @@ namespace GarageLogic
             }
         }
         
-        abstract public float PersentOfEnergy
-        {
-        // book to do when we can , precent of energy.
-            get;
-            set;
+        abstract public float PersentOfEnergy  // book to do when we can , precent of energy.
+        {       
+            get;            
         }
 
        
