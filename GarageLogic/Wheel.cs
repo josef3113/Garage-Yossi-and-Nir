@@ -72,12 +72,7 @@ namespace GarageLogic
 
         public override string ToString()
         {
-            return string.Format(
-@"Deatels of Whell :
-The  ManufacturerName  is :{0}
-The MaxAirPressure     is :{1}
-The CurrentAirPressure is :{2}"
-, ManufacturerName, MaxAirPressure, CurrentAirPressure);
+            return string.Format("Wheel details: Manufacturer Name :{0} , Current Air Pressure : {1}", ManufacturerName, CurrentAirPressure);
         }
     }
 }

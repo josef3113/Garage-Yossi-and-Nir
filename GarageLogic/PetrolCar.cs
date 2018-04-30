@@ -8,12 +8,12 @@ namespace GarageLogic
 {
     public class PetrolCar : PetrolVehicle
     {
-        const float k_MaxAirPressure = 32, k_CurrentFuelTank = 45f;
+        const float k_MaxAirPressure = 32, k_MaxFuelTank = 45f;
         const byte k_NumOfWheels = 4;
         private CarDetails m_CarDetails;
 
         public PetrolCar(string i_ModelName, string i_LicenseNumber, string i_CarColor, byte i_NumOfDoors)
-            : base(i_ModelName, i_LicenseNumber, eFuelType.Octan98, k_CurrentFuelTank, k_NumOfWheels)
+            : base(i_ModelName, i_LicenseNumber, eFuelType.Octan98, k_MaxFuelTank, k_NumOfWheels)
         {                       
             m_CurrentFuelTank = 0;
             m_PercentOfEnergy = 0;
