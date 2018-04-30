@@ -18,12 +18,7 @@ namespace GarageLogic
             this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
             this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
            
-        }
-
-        public override void Refuel(string i_FuelType, float i_FuelAmout)
-        {
-            // TODO whit check type of fule
-        }
+        }              
 
         public MotorcycleDetails DetailsOfMotorcycle
         {

@@ -8,6 +8,7 @@ namespace GarageLogic
 {
     internal class TruckDetails
     {
+        const float k_MaxCapacityTank = 60_000f;
         private bool m_HaveCoolTrunk;
         private float m_TrunkCapacity;
 
@@ -39,7 +40,14 @@ namespace GarageLogic
 
             set
             {
-                m_TrunkCapacity = value;
+                if (value >= 0 && value <= k_MaxCapacityTank)
+                {
+                    m_TrunkCapacity = value;
+                }
+                else
+                {
+                    throw new ValueOutOfRangeException(null,0, k_MaxCapacityTank);
+                }
             }
         }
     }
