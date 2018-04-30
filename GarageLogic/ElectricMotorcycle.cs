@@ -8,32 +8,39 @@ namespace GarageLogic
 {
     public class ElectricMotorcycle : ElectricVehicles
     {
+        const float k_MaxHoursBattery = 1.8f, k_MaxAirPressure = 30;
+        const byte k_NumOfWheels = 2;
+
         private MotorcycleDetails m_DetailsOfMotorcycle;
 
-        public MotorcycleDetails DetailsOfMotorcycle
+        public ElectricMotorcycle(string i_Model, string i_LicenseNumber, string i_TypeOfLicense, int i_EngineCapacity)
+            : base(i_Model, i_LicenseNumber, k_NumOfWheels, k_MaxHoursBattery)
+        {
+            m_DetailsOfMotorcycle = new MotorcycleDetails(i_TypeOfLicense, i_EngineCapacity);
+            m_BatteryHoursLeft = 0;
+            m_PercentOfEnergy = 0;
+            initWheelsList("Unknown", 0, k_MaxAirPressure, k_NumOfWheels);
+        }
+
+        public string TypeOfLicense
         {
             get
             {
-                return m_DetailsOfMotorcycle;
+                return m_DetailsOfMotorcycle.TypeOfLicense;
             }
 
             set
             {
-                m_DetailsOfMotorcycle = value;
+                m_DetailsOfMotorcycle.TypeOfLicense = value;
             }
         }
 
-        public ElectricMotorcycle(string i_Model, string i_LicenseNumber, eTypeOfLicense i_TypeOfLicense, int i_EngineCapacity)
-            : base(i_Model, i_LicenseNumber)
+        public int EngineCapacity
         {
-            m_DetailsOfMotorcycle = new MotorcycleDetails(i_TypeOfLicense, i_EngineCapacity);
-            this.ListOfWheels = new List<Wheel>(2);
-            this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
-            this.ListOfWheels.Add(new Wheel("YosiWhells", 0, 30));
-            this.MaxHoursBattery = (float)1.8;
+            get
+            {
+                return m_DetailsOfMotorcycle.EngineCapacity;
+            }
         }
-
-      
-
     }
 }

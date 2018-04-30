@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace GarageLogic
 {
-    public class MotorcycleDetails
+    internal class MotorcycleDetails
     {
+        const int k_MaxOfEngineCapacity = 7_000;
         private int m_EngineCapacity;
-        private eTypeOfLicense m_TypeOfLicense = eTypeOfLicense.A; // difult is A
+        private eTypeOfLicense m_TypeOfLicense;
 
-        public MotorcycleDetails(eTypeOfLicense i_TypeOfLicense, int i_EngineCapacity)
+        public MotorcycleDetails(string i_TypeOfLicense, int i_EngineCapacity)
         {
-            this.TypeOfLicense = i_TypeOfLicense;
-            this.EngineCapacity = i_EngineCapacity;
+            TypeOfLicense = i_TypeOfLicense;
+            EngineCapacity = i_EngineCapacity;
         }
 
         public int EngineCapacity
@@ -25,30 +26,48 @@ namespace GarageLogic
             }
 
             set
-            {
-                m_EngineCapacity = value;
+            { 
+                if(value >= 0 && value <= k_MaxOfEngineCapacity)
+                {
+                    m_EngineCapacity = value;
+                }
+                else
+                {
+                    throw new ValueOutOfRangeException(null, k_MaxOfEngineCapacity, 0);
+                }
+
+                
             }
         }
 
-        public eTypeOfLicense TypeOfLicense
+        public string TypeOfLicense
         {
             get
             {
-                return m_TypeOfLicense;
+                return m_TypeOfLicense.ToString();
             }
 
             set
             {
-                m_TypeOfLicense = value;
+                if (Enum.TryParse<eTypeOfLicense>(value, out eTypeOfLicense someTypeLicense))
+                {
+                    m_TypeOfLicense = someTypeLicense;
+                }
+                else
+                {
+                    throw new FormatException();
+                }
             }
         }
-    } // nasted
-    // book i not sure about all use in enum check this 
-    public enum eTypeOfLicense : byte
-    {
-        A = 1,
-        A1,
-        B1,
-        B2
-    }
+
+        // book i not sure about all use in enum check this 
+        public enum eTypeOfLicense : byte
+        {
+            A = 1,
+            A1,
+            B1,
+            B2
+        }
+    } 
+    
 }

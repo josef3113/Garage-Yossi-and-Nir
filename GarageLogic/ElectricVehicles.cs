@@ -23,11 +23,6 @@ namespace GarageLogic
             {
                 return m_BatteryHoursLeft;
             }
-
-            set
-            {
-                m_BatteryHoursLeft = value;
-            }
         }
 
         public float MaxHoursBattery
@@ -37,10 +32,6 @@ namespace GarageLogic
                 return m_MaxHoursBattery;
             }
 
-            set
-            {
-                m_MaxHoursBattery = value;
-            }
         }
 
         public void ChargingBattery(float i_AmoutOfEnergyToAdd)

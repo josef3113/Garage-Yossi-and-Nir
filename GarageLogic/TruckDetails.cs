@@ -46,7 +46,7 @@ namespace GarageLogic
                 }
                 else
                 {
-                    throw new ValueOutOfRangeException(null,0, k_MaxCapacityTank);
+                    throw new ValueOutOfRangeException(null, k_MaxCapacityTank, 0);
                 }
             }
         }
